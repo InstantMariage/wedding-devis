@@ -2,14 +2,14 @@ import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 
 const COLORS = {
-  pink: [236, 72, 153],    // #EC4899
-  pinkLight: [253, 242, 248],
-  gold: [212, 152, 26],    // #D4981A
-  goldLight: [253, 249, 236],
+  pink: [240, 98, 146],    // #F06292
+  pinkLight: [248, 187, 208], // #F8BBD0
+  gold: [240, 98, 146],    // #F06292 – remplace l'or
+  goldLight: [253, 235, 244], // rose très clair
   gray: [107, 114, 128],
   darkGray: [31, 41, 55],
   white: [255, 255, 255],
-  border: [243, 232, 238],
+  border: [243, 220, 232],
 }
 
 function parseTva(str) {
@@ -124,8 +124,8 @@ export function generatePDF(data) {
   })
 
   // Carte client
-  rect(col2x, colW, y, 52, [253, 249, 236])
-  stroke([240, 220, 180])
+  rect(col2x, colW, y, 52, [253, 235, 244])
+  stroke(COLORS.border)
   doc.rect(col2x, y, colW, 52, 'S')
 
   textColor(COLORS.gold)
@@ -154,7 +154,7 @@ export function generatePDF(data) {
 
   // ── ÉVÉNEMENT ────────────────────────────────────────────────────────
   rect(15, W - 30, y, 20, COLORS.goldLight)
-  stroke([240, 220, 180])
+  stroke(COLORS.border)
   doc.setLineWidth(0.3)
   doc.rect(15, y, W - 30, 20, 'S')
 

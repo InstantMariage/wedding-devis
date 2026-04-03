@@ -53,9 +53,9 @@ export default function InstallPrompt() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 safe-area-bottom">
-      <div className="max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-gold-200 overflow-hidden">
-        {/* Bandeau doré en haut */}
-        <div className="h-1 bg-gradient-to-r from-pink-400 via-gold-400 to-gold-300" />
+      <div className="max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-pink-200 overflow-hidden">
+        {/* Bandeau rose en haut */}
+        <div className="h-1 bg-gradient-to-r from-pink-400 via-pink-500 to-rose-400" />
 
         <div className="p-4 flex items-start gap-3">
           {/* Icône de l'app */}
@@ -66,7 +66,7 @@ export default function InstallPrompt() {
           />
 
           <div className="flex-1 min-w-0">
-            <p className="font-serif font-bold text-gold-800 text-sm leading-tight">
+            <p className="font-serif font-bold text-pink-700 text-sm leading-tight">
               Installer Wedding Devis Pro
             </p>
 
@@ -98,7 +98,7 @@ export default function InstallPrompt() {
           <div className="px-4 pb-4">
             <button
               onClick={handleInstall}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-gold-500 text-white text-sm font-semibold py-2.5 rounded-xl shadow hover:opacity-90 transition-opacity"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-sm font-semibold py-2.5 rounded-xl shadow hover:opacity-90 transition-opacity"
             >
               <Download size={16} />
               Installer l'application

@@ -393,7 +393,7 @@ export default function QuoteForm({ provider, onSubmit, onBack }) {
 
                   {/* Prestations personnalisées */}
                   {customPrestations.map(p => (
-                    <tr key={p.id} className="border-b border-gray-50 bg-amber-50/30">
+                    <tr key={p.id} className="border-b border-gray-50 bg-pink-50/30">
                       <td className="py-2.5 px-2">
                         <input type="checkbox" checked={p.selected}
                           onChange={() => setCustomPrestations(prev =>

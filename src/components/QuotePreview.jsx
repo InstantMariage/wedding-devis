@@ -136,8 +136,8 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
             </div>
 
             {/* Client */}
-            <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
-              <div className="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">
+            <div className="bg-pink-50 rounded-xl p-5 border border-pink-100">
+              <div className="text-xs font-bold text-pink-500 uppercase tracking-wider mb-3">
                 Client
               </div>
               <div className="font-semibold text-gray-900 text-base">
@@ -152,8 +152,8 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
           </div>
 
           {/* ── Événement ── */}
-          <div className="bg-gradient-to-r from-amber-50 to-pink-50 rounded-xl p-4 border border-pink-100 mb-6">
-            <div className="text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">
+          <div className="bg-gradient-to-r from-pink-50 to-pink-50/50 rounded-xl p-4 border border-pink-100 mb-6">
+            <div className="text-xs font-bold text-pink-500 uppercase tracking-wider mb-2">
               Événement
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-gray-700">
@@ -289,8 +289,8 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
           )}
 
           {/* ── Conditions ── */}
-          <div className="mb-6 p-4 bg-amber-50/50 rounded-xl border border-amber-100">
-            <div className="text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">
+          <div className="mb-6 p-4 bg-pink-50/50 rounded-xl border border-pink-100">
+            <div className="text-xs font-bold text-pink-500 uppercase tracking-wider mb-2">
               Conditions générales
             </div>
             <p className="text-xs text-gray-500 leading-relaxed whitespace-pre-line">{conditions}</p>

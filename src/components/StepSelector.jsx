@@ -17,7 +17,7 @@ export default function StepSelector({ onSelect }) {
     <div className="animate-fade-in py-8">
       {/* Titre */}
       <div className="text-center mb-10">
-        <p className="text-gold-600 text-sm font-medium tracking-widest uppercase mb-3">
+        <p className="text-pink-500 text-sm font-medium tracking-widest uppercase mb-3">
           Bienvenue
         </p>
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">

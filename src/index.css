@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background: linear-gradient(135deg, #fff0f5 0%, #ffffff 50%, #fdf9ec 100%);
+  background: linear-gradient(135deg, #fff0f5 0%, #ffffff 50%, #fce4ec 100%);
   min-height: 100vh;
   color: #374151;
   -webkit-font-smoothing: antialiased;
@@ -35,10 +35,10 @@ body {
 }
 .animate-fade-in { animation: fadeIn 0.4s ease-out; }
 
-/* Separateur doré */
+/* Separateur rose */
 .gold-divider {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #d4981a, transparent);
+  background: linear-gradient(90deg, transparent, #F06292, transparent);
 }
 
 /* Devis preview styles (pour l'impression/PDF) */
