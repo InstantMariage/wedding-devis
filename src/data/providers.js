@@ -179,8 +179,8 @@ export const providers = [
   },
   {
     id: 'animateur',
-    name: 'Animateur',
-    emoji: '🎤',
+    name: 'Animation',
+    emoji: '🌠',
     category: 'Musique & Animation',
     description: 'Animation et maître de cérémonie',
     prestations: [
@@ -499,6 +499,29 @@ export const providers = [
       { id: 'metal', label: 'Métal choisi', type: 'select', options: ['Or jaune 18k', 'Or blanc 18k', 'Or rose 18k', 'Platine'] },
       { id: 'taille', label: 'Tailles (bague 1 & bague 2)', type: 'text', placeholder: 'ex : 52 & 60' },
       { id: 'gravure', label: 'Texte gravure', type: 'text', placeholder: 'ex : Marie & Paul – 15.06.2025' },
+    ],
+  },
+
+  // ── CADEAUX & SOUVENIRS ───────────────────────────────────────────────
+  {
+    id: 'cadeaux',
+    name: 'Cadeaux & Souvenirs invités',
+    emoji: '🎁',
+    category: 'Décoration & Accessoires',
+    description: 'Cadeaux et souvenirs personnalisés pour les invités',
+    prestations: [
+      { id: 'p1', label: 'Dragées personnalisées (par invité)', price: 4, unit: '/pers', included: true },
+      { id: 'p2', label: 'Boîte cadeau personnalisée (par invité)', price: 8, unit: '/pers' },
+      { id: 'p3', label: 'Coffret dégustation (miel, confiture…)', price: 12, unit: '/pers' },
+      { id: 'p4', label: 'Photo polaroïd encadrée (par invité)', price: 10, unit: '/pers' },
+      { id: 'p5', label: 'Bougie parfumée personnalisée', price: 7, unit: '/pers' },
+      { id: 'p6', label: 'Marque-place souvenir gravé', price: 5, unit: '/pers' },
+      { id: 'p7', label: 'Panier garni thématique', price: 20, unit: '/pers' },
+    ],
+    specificFields: [
+      { id: 'nbInvites', label: 'Nombre d\'invités', type: 'number', placeholder: '80' },
+      { id: 'theme', label: 'Thème / style souhaité', type: 'text', placeholder: 'ex : champêtre, élégant, vintage' },
+      { id: 'personnalisation', label: 'Personnalisation', type: 'select', options: ['Prénom des invités', 'Prénom des mariés', 'Logo / monogramme', 'Sans personnalisation'] },
     ],
   },
 
