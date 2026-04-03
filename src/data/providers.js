@@ -114,25 +114,6 @@ export const providers = [
     ],
   },
   {
-    id: 'chocolatier',
-    name: 'Chocolatier',
-    emoji: '🍫',
-    category: 'Restauration',
-    description: 'Chocolats, dragées et cadeaux sucrés',
-    prestations: [
-      { id: 'p1', label: 'Dragées amandes personnalisées (boîte de 10)', price: 8, unit: '/boîte', included: true },
-      { id: 'p2', label: 'Tablettes chocolat personnalisées', price: 6, unit: '/pièce' },
-      { id: 'p3', label: 'Coffret chocolats fins (par personne)', price: 15, unit: '/pers' },
-      { id: 'p4', label: 'Fontaine à chocolat (location 4h)', price: 480 },
-      { id: 'p5', label: 'Bar à chocolat dégustation', price: 22, unit: '/pers' },
-      { id: 'p6', label: 'Emballage et ruban personnalisé', price: 2, unit: '/pièce' },
-    ],
-    specificFields: [
-      { id: 'nbInvites', label: 'Nombre d\'invités', type: 'number', placeholder: '80' },
-      { id: 'gravure', label: 'Texte personnalisé', type: 'text', placeholder: 'ex : Prénom1 & Prénom2 – 2025' },
-    ],
-  },
-  {
     id: 'foodtruck',
     name: 'Food Truck',
     emoji: '🚚',
@@ -286,7 +267,7 @@ export const providers = [
   // ── LIEU ──────────────────────────────────────────────────────────────
   {
     id: 'salle',
-    name: 'Salle / Château',
+    name: 'Salles de reception',
     emoji: '🏰',
     category: 'Lieu',
     description: 'Location de salle de réception',
