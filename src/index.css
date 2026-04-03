@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffffff 50%, #fdf9ec 100%);
+  min-height: 100vh;
+  color: #374151;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Scrollbar élégant */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fff0f5; }
+::-webkit-scrollbar-thumb { background: #f9a8d4; border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+
+/* Separateur doré */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4981a, transparent);
+}
+
+/* Devis preview styles (pour l'impression/PDF) */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
