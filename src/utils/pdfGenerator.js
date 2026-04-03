@@ -17,7 +17,11 @@ function parseTva(str) {
 }
 
 function formatEur(n) {
-  return n.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'
+  // toLocaleString fr-FR uses non-breaking space (\u00A0) as thousands separator
+  // which jsPDF renders as '/' — use manual formatting with regular space instead
+  const parts = n.toFixed(2).split('.')
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+  return parts.join(',') + ' \u20AC'
 }
 
 function formatDate(str) {
@@ -70,7 +74,7 @@ export function generatePDF(data) {
   // Emoji & nom prestataire
   doc.setFontSize(13)
   doc.setFont('helvetica', 'normal')
-  doc.text(`${provider.emoji}  ${provider.name.toUpperCase()}`, 15, 33)
+  doc.text(provider.name.toUpperCase(), 15, 33)
 
   // Numéro de devis & date
   doc.setFontSize(9)
@@ -161,11 +165,11 @@ export function generatePDF(data) {
   textColor(COLORS.darkGray)
   font('normal', 9)
   const evInfo = [
-    evenement.dateMariage ? `📅 ${formatDate(evenement.dateMariage)}` : '',
-    evenement.lieu ? `🏰 ${evenement.lieu}` : '',
-    evenement.ville ? `📍 ${evenement.ville}` : '',
-    evenement.nbInvites ? `👥 ${evenement.nbInvites} invités` : '',
-  ].filter(Boolean).join('    ')
+    evenement.dateMariage ? `Date : ${formatDate(evenement.dateMariage)}` : '',
+    evenement.lieu ? `Lieu : ${evenement.lieu}` : '',
+    evenement.ville ? `Ville : ${evenement.ville}` : '',
+    evenement.nbInvites ? `Invites : ${evenement.nbInvites}` : '',
+  ].filter(Boolean).join('    |    ')
   doc.text(evInfo, 20, y + 14)
 
   y += 26

@@ -25,7 +25,7 @@ export default function Header({ step, onBack, onReset }) {
             <div>
               <h1 className="font-serif text-xl font-bold text-gray-800 leading-tight">
                 <span className="text-pink-400">✦</span>{' '}
-                Mariage Devis Pro
+                InstantMariage.fr | Générateur de Devis
               </h1>
               <p className="text-xs text-gray-400">Générateur de devis pour prestataires mariage</p>
             </div>
