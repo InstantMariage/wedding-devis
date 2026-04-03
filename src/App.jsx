@@ -3,6 +3,7 @@ import Header from './components/Header'
 import StepSelector from './components/StepSelector'
 import QuoteForm from './components/QuoteForm'
 import QuotePreview from './components/QuotePreview'
+import InstallPrompt from './components/InstallPrompt'
 
 export default function App() {
   const [step, setStep] = useState(1)
@@ -37,6 +38,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <InstallPrompt />
       <Header step={step} onBack={handleBack} onReset={handleReset} />
       <main className="container mx-auto px-4 max-w-6xl">
         {step === 1 && (

@@ -1,10 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wedding-devis</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme color (barre de statut mobile) -->
+    <meta name="theme-color" content="#d4981a" />
+
+    <!-- iOS / Safari PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Devis Mariage" />
+    <link rel="apple-touch-icon" href="/icons/pwa-512.svg" />
+
+    <!-- Android / Chrome -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Devis Mariage" />
+
+    <!-- SEO / Description -->
+    <meta name="description" content="Créez et gérez vos devis de mariage facilement avec Wedding Devis Pro." />
+
+    <!-- Empêche la mise en cache agressive sur iOS lors du premier accès -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+
+    <title>Wedding Devis Pro</title>
   </head>
   <body>
     <div id="root"></div>

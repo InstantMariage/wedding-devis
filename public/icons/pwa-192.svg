@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce4ec"/>
+      <stop offset="100%" style="stop-color:#fdf9ec"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6b332"/>
+      <stop offset="50%" style="stop-color:#d4981a"/>
+      <stop offset="100%" style="stop-color:#edc85b"/>
+    </linearGradient>
+    <linearGradient id="heart" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="192" height="192" rx="43" fill="url(#bg)"/>
+  <rect x="7" y="7" width="178" height="178" rx="38" fill="none" stroke="url(#ring)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Wedding rings -->
+  <circle cx="73" cy="93" r="27" fill="none" stroke="url(#ring)" stroke-width="8"/>
+  <circle cx="119" cy="93" r="27" fill="none" stroke="url(#ring)" stroke-width="8"/>
+  <path d="M96,69 A27,27 0 0,1 96,117" fill="none" stroke="#fdf9ec" stroke-width="10"/>
+  <path d="M96,73 A27,27 0 0,0 96,113" fill="none" stroke="url(#ring)" stroke-width="8"/>
+
+  <!-- Heart -->
+  <path d="M96,60
+    C96,60 82,44 72,44
+    C61,44 54,52 54,62
+    C54,76 72,87 96,101
+    C120,87 138,76 138,62
+    C138,52 131,44 120,44
+    C110,44 96,60 96,60Z"
+    fill="url(#heart)" opacity="0.9"/>
+
+  <!-- Name -->
+  <text x="96" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#b87b14" letter-spacing="1">Devis Pro</text>
+  <text x="96" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#ec4899" letter-spacing="2">MARIAGE</text>
+</svg>
