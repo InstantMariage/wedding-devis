@@ -30,11 +30,24 @@ function formatDate(str) {
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
-export function generatePDF(data) {
+async function loadImageAsBase64(url) {
+  const response = await fetch(url)
+  const blob = await response.blob()
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = reject
+    reader.readAsDataURL(blob)
+  })
+}
+
+export async function generatePDF(data) {
   const {
     prestataire, client, evenement, prestations,
     specificValues, tva, acompte, conditions, numeroDevis, provider,
   } = data
+
+  const logoBase64 = await loadImageAsBase64('/1024px - Other Use.png')
 
   const doc = new jsPDF({ unit: 'mm', format: 'a4', putOnlyUsedFonts: true })
   const W = 210
@@ -65,16 +78,14 @@ export function generatePDF(data) {
     doc.circle(W - 15 + i * 3, 10 + i * 4, 8, 'S')
   }
 
-  // Titre "DEVIS"
-  doc.setFont('helvetica', 'bold')
-  doc.setFontSize(28)
-  doc.setTextColor(255, 255, 255)
-  doc.text('DEVIS', 15, 22)
+  // Logo (remplace "DEVIS")
+  doc.addImage(logoBase64, 'PNG', 12, 8, 21, 21)
 
-  // Emoji & nom prestataire
+  // Nom prestataire
   doc.setFontSize(13)
   doc.setFont('helvetica', 'normal')
-  doc.text(provider.name.toUpperCase(), 15, 33)
+  doc.setTextColor(255, 255, 255)
+  doc.text(provider.name.toUpperCase(), 37, 22)
 
   // Numéro de devis & date
   doc.setFontSize(9)

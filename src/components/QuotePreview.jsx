@@ -31,7 +31,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
   const montantAcompte = totalTTC * acompteRate
   const solde = totalTTC - montantAcompte
 
-  const handleDownload = () => generatePDF(formData)
+  const handleDownload = () => generatePDF(formData).catch(console.error)
 
   const handlePrint = () => window.print()
 
