@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'icons/*.svg'],
       manifest: {
         name: 'Wedding Devis Pro',
-        short_name: 'Devis Mariage',
+        short_name: 'Devis InstantMariage.fr',
         description: 'Créez et gérez vos devis de mariage facilement',
         start_url: '/',
         display: 'standalone',
