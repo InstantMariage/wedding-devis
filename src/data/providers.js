@@ -350,26 +350,6 @@ export const providers = [
       { id: 'duree', label: 'Durée de mise à disposition', type: 'select', options: ['3h', '4h', '5h', '6h', 'Journée'] },
     ],
   },
-  {
-    id: 'limousine',
-    name: 'Limousine',
-    emoji: '🚙',
-    category: 'Transport',
-    description: 'Limousine et véhicule de luxe',
-    prestations: [
-      { id: 'p1', label: 'Location limousine stretch (4h, 8 pers)', price: 900, included: true },
-      { id: 'p2', label: 'Location SUV limousine (4h, 10 pers)', price: 1100 },
-      { id: 'p3', label: 'Navette aller-retour hôtel/salle', price: 350 },
-      { id: 'p4', label: 'Champagne à bord', price: 80 },
-      { id: 'p5', label: 'Tapis rouge et décoration', price: 100 },
-      { id: 'p6', label: 'Heure supplémentaire', price: 180, unit: '/h' },
-    ],
-    specificFields: [
-      { id: 'nbPassagers', label: 'Nombre de passagers', type: 'number', placeholder: '8' },
-      { id: 'trajet', label: 'Itinéraire prévu', type: 'text', placeholder: 'ex : hôtel → mairie → château' },
-    ],
-  },
-
   // ── ORGANISATION ─────────────────────────────────────────────────────
   {
     id: 'weddingplanner',
@@ -413,28 +393,6 @@ export const providers = [
   },
 
   // ── PAPETERIE & ART ───────────────────────────────────────────────────
-  {
-    id: 'graphiste',
-    name: 'Graphiste faire-part',
-    emoji: '🎨',
-    category: 'Papeterie & Art',
-    description: 'Papeterie de mariage personnalisée',
-    prestations: [
-      { id: 'p1', label: 'Faire-part de mariage (création graphique)', price: 380, included: true },
-      { id: 'p2', label: 'Impression faire-part (×50)', price: 180 },
-      { id: 'p3', label: 'Impression faire-part (×100)', price: 280 },
-      { id: 'p4', label: 'Save the date (création + impression ×50)', price: 220 },
-      { id: 'p5', label: 'Menu de table (×50)', price: 160 },
-      { id: 'p6', label: 'Plan de table illustré', price: 140 },
-      { id: 'p7', label: 'Marque-place (×50)', price: 90 },
-      { id: 'p8', label: 'Livre d\'or illustré', price: 120 },
-      { id: 'p9', label: 'Identité visuelle complète mariage', price: 650 },
-    ],
-    specificFields: [
-      { id: 'style', label: 'Style graphique', type: 'text', placeholder: 'ex : bohème, minimaliste, floral, aquarelle' },
-      { id: 'nbExemplaires', label: 'Nombre d\'exemplaires (faire-part)', type: 'number', placeholder: '100' },
-    ],
-  },
   {
     id: 'calligraphe',
     name: 'Calligraphe',
@@ -525,28 +483,6 @@ export const providers = [
     ],
   },
 
-  // ── VOYAGE ────────────────────────────────────────────────────────────
-  {
-    id: 'voyage',
-    name: 'Agence voyage de noces',
-    emoji: '✈️',
-    category: 'Voyage & Luxe',
-    description: 'Lune de miel et voyage de noces',
-    prestations: [
-      { id: 'p1', label: 'Forfait voyage de noces sur-mesure', price: 4500, included: true },
-      { id: 'p2', label: 'Vols aller-retour (par personne)', price: 900, unit: '/pers' },
-      { id: 'p3', label: 'Hôtel / resort 5★ (7 nuits, 2 pers)', price: 2800 },
-      { id: 'p4', label: 'Transferts aéroport + excursions', price: 600 },
-      { id: 'p5', label: 'Dîner romantique sur place (×2)', price: 300 },
-      { id: 'p6', label: 'Assurance voyage multi-risques', price: 180 },
-      { id: 'p7', label: 'Liste de mariage voyage (gestion)', price: 150 },
-    ],
-    specificFields: [
-      { id: 'destination', label: 'Destination souhaitée', type: 'text', placeholder: 'ex : Maldives, Italie, Réunion, Polynésie' },
-      { id: 'duree', label: 'Durée du voyage', type: 'select', options: ['1 semaine', '10 jours', '2 semaines', '3 semaines'] },
-      { id: 'dateDepart', label: 'Date de départ prévue', type: 'date' },
-    ],
-  },
 ]
 
 export const categories = [...new Set(providers.map(p => p.category))]
