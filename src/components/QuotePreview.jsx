@@ -63,7 +63,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
           </button>
           <button onClick={handleDownload}
             className="flex items-center gap-2 px-6 py-2.5 rounded-xl
-              bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold text-sm
+              bg-gradient-to-r from-pink-500 to-pink-600 text-white font-semibold text-sm
               shadow-lg shadow-pink-200 hover:shadow-xl hover:shadow-pink-300
               hover:-translate-y-0.5 transition-all duration-200">
             <Download size={16} /> Télécharger PDF
@@ -78,7 +78,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
         id="devis-document"
       >
         {/* ── En-tête rose ── */}
-        <div className="bg-gradient-to-r from-pink-500 to-rose-500 px-8 py-6 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-pink-500 to-pink-600 px-8 py-6 relative overflow-hidden">
           {/* Cercles décoratifs */}
           <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-white/10" />
           <div className="absolute -right-2 top-8 w-20 h-20 rounded-full bg-white/10" />
@@ -195,7 +195,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
             <div className="rounded-xl overflow-hidden border border-pink-100">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-gradient-to-r from-pink-500 to-rose-500 text-white">
+                  <tr className="bg-gradient-to-r from-pink-500 to-pink-600 text-white">
                     <th className="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wide">
                       Désignation
                     </th>
@@ -238,7 +238,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
                 <span>TVA ({tva})</span>
                 <span className="font-medium text-gray-800">{formatEur(montantTVA)}</span>
               </div>
-              <div className="flex justify-between py-3 px-4 bg-gradient-to-r from-pink-500 to-rose-500
+              <div className="flex justify-between py-3 px-4 bg-gradient-to-r from-pink-500 to-pink-600
                 rounded-xl text-white font-bold text-base">
                 <span>TOTAL TTC</span>
                 <span>{formatEur(totalTTC)}</span>
@@ -320,7 +320,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
         </div>
 
         {/* ── Pied de page ── */}
-        <div className="bg-gradient-to-r from-pink-500 to-rose-500 px-8 py-3 text-center">
+        <div className="bg-gradient-to-r from-pink-500 to-pink-600 px-8 py-3 text-center">
           <p className="text-white/80 text-xs">
             {prestataire.entreprise || prestataire.nom}
             {prestataire.email && ` • ${prestataire.email}`}
@@ -339,7 +339,7 @@ export default function QuotePreview({ provider, formData, onBack, onReset }) {
         </button>
         <button onClick={handleDownload}
           className="flex items-center gap-2 px-8 py-3 rounded-xl
-            bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold
+            bg-gradient-to-r from-pink-500 to-pink-600 text-white font-semibold
             shadow-lg shadow-pink-200 hover:shadow-xl hover:shadow-pink-300
             hover:-translate-y-0.5 transition-all duration-200">
           <Download size={18} />

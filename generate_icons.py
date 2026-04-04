@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Génère les icônes PWA pour Wedding Devis Pro.
-Fond rose #ec4899, initiales DM en blanc, style luxe.
+Fond rose #F06292, initiales DM en blanc, style luxe.
 Aucune dépendance externe — utilise uniquement zlib + struct.
 """
 import zlib, struct, math
@@ -77,8 +77,8 @@ def make_icon(size):
     buf = bytearray(size * size * 3)
 
     # Couleurs
-    P1 = (236, 72, 153)   # #ec4899
-    P2 = (190, 24, 93)    # dégradé bas
+    P1 = (240, 98, 146)   # #F06292
+    P2 = (212, 72, 120)   # #D44878 – dégradé bas
     W  = (255, 255, 255)
 
     corner_r = size * 0.175

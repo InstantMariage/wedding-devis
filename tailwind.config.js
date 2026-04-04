@@ -16,6 +16,19 @@ export default {
           800: '#784b15',
           900: '#643f17',
         },
+        // Palette rose InstantMariage — #F06292 comme couleur principale (pink-500)
+        pink: {
+          50:  '#fef1f6',
+          100: '#fce4ed',
+          200: '#f9c5db',
+          300: '#f59dbe',
+          400: '#f27fab',
+          500: '#F06292',
+          600: '#d44878',
+          700: '#b0355f',
+          800: '#8c2649',
+          900: '#6a1c35',
+        },
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],

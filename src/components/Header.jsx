@@ -24,7 +24,7 @@ export default function Header({ step, onBack, onReset }) {
             )}
             <div>
               <h1 className="font-serif text-xl font-bold text-gray-800 leading-tight">
-                <span className="text-pink-400">✦</span>{' '}
+                <img src="/1024px - Other Use.png" alt="Logo" width={32} height={32} className="inline-block align-middle mr-1" />{' '}
                 InstantMariage.fr | Générateur de Devis
               </h1>
               <p className="text-xs text-gray-400">Générateur de devis pour prestataires mariage</p>

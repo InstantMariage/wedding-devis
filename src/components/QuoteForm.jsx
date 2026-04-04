@@ -504,7 +504,7 @@ export default function QuoteForm({ provider, onSubmit, onBack }) {
             ← Retour
           </button>
           <button type="submit"
-            className="px-8 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500
+            className="px-8 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-pink-600
               text-white font-semibold text-sm shadow-lg shadow-pink-200
               hover:shadow-xl hover:shadow-pink-300 hover:-translate-y-0.5
               transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-400">

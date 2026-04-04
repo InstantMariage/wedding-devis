@@ -55,12 +55,12 @@ export default function InstallPrompt() {
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 safe-area-bottom">
       <div className="max-w-lg mx-auto bg-white rounded-2xl shadow-2xl border border-pink-200 overflow-hidden">
         {/* Bandeau rose en haut */}
-        <div className="h-1 bg-gradient-to-r from-pink-400 via-pink-500 to-rose-400" />
+        <div className="h-1 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600" />
 
         <div className="p-4 flex items-start gap-3">
           {/* Icône de l'app */}
           <img
-            src="/icons/pwa-192.svg"
+            src="/icons/icon-192x192.png"
             alt="Wedding Devis Pro"
             className="w-14 h-14 rounded-xl flex-shrink-0 shadow"
           />
@@ -98,7 +98,7 @@ export default function InstallPrompt() {
           <div className="px-4 pb-4">
             <button
               onClick={handleInstall}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-sm font-semibold py-2.5 rounded-xl shadow hover:opacity-90 transition-opacity"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-sm font-semibold py-2.5 rounded-xl shadow hover:opacity-90 transition-opacity"
             >
               <Download size={16} />
               Installer l'application

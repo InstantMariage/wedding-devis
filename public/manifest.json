@@ -5,8 +5,8 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#fdf9ec",
-  "theme_color": "#d4981a",
+  "background_color": "#ffffff",
+  "theme_color": "#F06292",
   "lang": "fr",
   "categories": ["business", "lifestyle"],
   "icons": [
