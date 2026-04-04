@@ -1,12 +1,22 @@
 import { useState } from 'react'
-import { Plus, Trash2, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react'
+import { Plus, Trash2, ChevronDown, ChevronUp, AlertCircle, Save, CheckCircle, Pencil } from 'lucide-react'
 
 const TVA_RATES = ['0 %', '5,5 %', '10 %', '20 %']
+const PRESTATAIRE_STORAGE_KEY = 'instantmariage_prestataire'
 
 const initialPrestataire = {
   nom: '', prenom: '', entreprise: '', siret: '',
   adresse: '', codePostal: '', ville: '',
   telephone: '', email: '', siteWeb: '',
+}
+
+function loadPrestataireFromStorage() {
+  try {
+    const saved = localStorage.getItem(PRESTATAIRE_STORAGE_KEY)
+    return saved ? JSON.parse(saved) : null
+  } catch {
+    return null
+  }
 }
 
 const initialClient = {
@@ -46,7 +56,9 @@ const inputClass = `w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-wh
 const selectClass = `${inputClass} cursor-pointer`
 
 export default function QuoteForm({ provider, onSubmit, onBack }) {
-  const [prestataire, setPrestataire] = useState(initialPrestataire)
+  const [prestataire, setPrestataire] = useState(() => loadPrestataireFromStorage() || initialPrestataire)
+  const [savedProfile, setSavedProfile] = useState(() => !!loadPrestataireFromStorage())
+  const [justSaved, setJustSaved] = useState(false)
   const [client, setClient] = useState(initialClient)
   const [evenement, setEvenement] = useState(initialEvenement)
   const [tva, setTva] = useState('20 %')
@@ -71,6 +83,20 @@ export default function QuoteForm({ provider, onSubmit, onBack }) {
 
   const [errors, setErrors] = useState({})
   const [openSection, setOpenSection] = useState(null)
+
+  const savePrestataire = () => {
+    localStorage.setItem(PRESTATAIRE_STORAGE_KEY, JSON.stringify(prestataire))
+    setSavedProfile(true)
+    setJustSaved(true)
+    setTimeout(() => setJustSaved(false), 2500)
+  }
+
+  const resetPrestataire = () => {
+    localStorage.removeItem(PRESTATAIRE_STORAGE_KEY)
+    setPrestataire(initialPrestataire)
+    setSavedProfile(false)
+    setOpenSection(null)
+  }
 
   const togglePrestation = (id) => {
     setPrestations(prev => prev.map(p => p.id === id ? { ...p, selected: !p.selected } : p))
@@ -185,10 +211,27 @@ export default function QuoteForm({ provider, onSubmit, onBack }) {
               <span className="flex items-center gap-2">
                 {errors.pnom || errors.pemail ? <span className="w-2 h-2 rounded-full bg-red-400 inline-block" /> : null}
                 1. Vos informations
+                {savedProfile && (
+                  <span className="inline-flex items-center gap-1 text-xs font-normal text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    <CheckCircle size={11} />
+                    Profil enregistré
+                  </span>
+                )}
               </span>
             </SectionTitle>
             {openSection === 'pre' ? <ChevronUp size={20} className="text-gray-400 flex-shrink-0" /> : <ChevronDown size={20} className="text-gray-400 flex-shrink-0" />}
           </button>
+
+          {savedProfile && openSection === 'pre' && (
+            <div className="px-6 pb-4">
+              <button type="button" onClick={() => setOpenSection(null)}
+                className="flex items-center gap-2 text-sm text-pink-500 hover:text-pink-600 font-medium transition-colors">
+                <Pencil size={14} />
+                Modifier mes infos prestataire
+              </button>
+            </div>
+          )}
+
           {openSection !== 'pre' && (
             <div className="px-6 pb-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -244,6 +287,27 @@ export default function QuoteForm({ provider, onSubmit, onBack }) {
                     onChange={e => setPrestataire(p => ({ ...p, siteWeb: e.target.value }))}
                     placeholder="www.studio-martin.fr" />
                 </Field>
+              </div>
+
+              <div className="mt-5 flex items-center gap-3 pt-4 border-t border-pink-50">
+                <button type="button" onClick={savePrestataire}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600
+                    text-white text-sm font-medium transition-colors shadow-sm shadow-pink-200">
+                  <Save size={14} />
+                  {savedProfile ? 'Mettre à jour mes infos' : 'Sauvegarder mes infos prestataire'}
+                </button>
+                {justSaved && (
+                  <span className="flex items-center gap-1.5 text-sm text-emerald-600 animate-fade-in">
+                    <CheckCircle size={15} />
+                    Enregistré !
+                  </span>
+                )}
+                {savedProfile && (
+                  <button type="button" onClick={resetPrestataire}
+                    className="text-xs text-gray-400 hover:text-gray-600 underline transition-colors ml-auto">
+                    Effacer le profil
+                  </button>
+                )}
               </div>
             </div>
           )}
