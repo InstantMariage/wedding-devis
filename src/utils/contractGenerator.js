@@ -241,7 +241,7 @@ export async function generateContractPDF(data) {
   addBoldLabel('Total TTC :', formatEur(totalTTC))
   if (acompteRate > 0) {
     y += 1
-    addBoldLabel(`Acompte à la signature (${acompte} %) :`, `${formatEur(montantAcompte)} — dû à la signature du présent contrat`)
+    addBoldLabel(`Acompte (${acompte} %) :`, `${formatEur(montantAcompte)} — dû à la signature du présent contrat`)
     addBoldLabel('Solde restant :', `${formatEur(solde)} — dû avant ou le jour de la prestation`)
   } else {
     y += 1
