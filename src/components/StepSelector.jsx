@@ -14,7 +14,7 @@ export default function StepSelector({ onSelect }) {
   })
 
   return (
-    <div className="animate-fade-in py-8">
+    <div className="animate-fade-in py-10">
       {/* Titre */}
       <div className="text-center mb-10">
         <p className="text-pink-500 text-sm font-medium tracking-widest uppercase mb-3">

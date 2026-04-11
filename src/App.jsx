@@ -61,7 +61,7 @@ export default function App() {
         onShowHistory={handleShowHistory}
         historyCount={history.length}
       />
-      <main className="container mx-auto px-4 max-w-6xl">
+      <main className="container mx-auto px-4 max-w-6xl pt-16">
         {page === 'history' && (
           <QuoteHistory
             history={history}
